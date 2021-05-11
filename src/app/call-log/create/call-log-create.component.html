@@ -1,0 +1,76 @@
+
+<div>
+  All fields are required
+</div>
+
+<br/>
+
+<div style="display: flex;">
+  <div style="display: flex; width: 50%;">
+    <div style="width: 70px; padding-top: 5px;">
+      Caller <span style="color: red">*</span>
+    </div>
+    <div style="flex: 1;">
+      <input type="text" [(ngModel)]="callLog.user" style="padding: 5px; width: 100%;" required />
+    </div>
+  </div>
+  <div style="display: flex; flex: 1; justify-content: flex-end;">
+    <div style="width: 70px; padding-top: 5px;">
+      Status <span style="color: red">*</span>
+    </div>
+    <div>
+      <select [(ngModel)]="callLog.status" style="padding: 5px; width: 100px;" required>
+        <option>Open</option>
+        <option>Closed</option>
+      </select>
+    </div>
+  </div>
+</div>
+<br />
+<div style="display: flex; width: 50%;">
+  <div style="width: 70px; padding-top: 5px;">
+    Title <span style="color: red">*</span>
+  </div>
+  <div style="flex: 1;">
+    <input type="text" [(ngModel)]="callLog.title" id="title" name="title" #title="ngModel" required
+      style="padding: 5px; width: 100%;" />
+  </div>
+</div>
+
+<br />
+
+<div style="display: flex;">
+  <div style="width: 70px; padding-top: 5px;">
+    Problem <span style="color: red">*</span>
+  </div>
+  <div style="flex: 1;">
+    <textarea [(ngModel)]="callLog.problem" style="width: 100%;" rows="5" required></textarea>
+  </div>
+</div>
+<br />
+<div style="display: flex;">
+  <div style="width: 70px; padding-top: 5px;">
+    Solution <span style="color: red">*</span>
+  </div>
+  <div style="flex: 1;">
+    <textarea [(ngModel)]="callLog.solution" style="width: 100%;" rows="5" required></textarea>
+  </div>
+</div>
+<br />
+<div style="display: flex; flex-direction: row; justify-content: flex-end;">
+  <button mat-raised-button color="primary" (click)="save()" [disabled]="!isFormValid">
+    Save
+  </button>
+  &nbsp;
+  <button mat-raised-button color="primary" (click)="saveAndClose()" [disabled]="!isFormValid">
+    Save & Close
+  </button>
+  &nbsp;
+  <button mat-raised-button color="accent" (click)="clear()">
+    Clear
+  </button>
+  &nbsp;
+  <button mat-raised-button color="warn" (click)="cancel()">
+    Cancel
+  </button>
+</div>

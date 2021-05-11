@@ -1,0 +1,17 @@
+<h1>
+  Call Log Manager
+</h1>
+
+<mat-tab-group [(selectedIndex)]="selectedIndex">
+  <mat-tab label="Search Call">
+    <div style="margin: 20px;">
+      <app-call-log-search #callLogSearch></app-call-log-search>
+    </div>
+  </mat-tab>
+  <mat-tab label="New Call">
+    <div style="margin: 20px;">
+      <app-call-log-create (onCancel)="cancelCreate($event)"></app-call-log-create>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
